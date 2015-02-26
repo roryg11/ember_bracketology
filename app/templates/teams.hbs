@@ -1,0 +1,28 @@
+<h1>Teams Template</h1>
+
+<div class="ui two column page grid">
+  <div class="column">
+    {{input value=newTeamOnePlayers on="keyup" placeholder="Pick Your First Team..."}}
+    <div class="ui divided list">
+      {{#if newTeamOnePlayers}}
+        {{#each team in foundTeamsOne}}
+        <div class="item">
+          {{#link-to 'teams.show' team}}{{team.name}}{{/link-to}}
+        </div>
+        {{/each}}
+      {{/if}}
+    </div>
+  </div>
+  <div class="column">
+    {{input value=newTeamTwoPlayers on="keyup" placeholder="Pick Your Second Team..."}}
+    <div class="ui divided list">
+      {{#if newTeamTwoPlayers}}
+      {{#each team in foundTeamsTwo}}
+      <div class="item">
+        {{#link-to 'teams.show' team}}{{team.name}}{{/link-to}}
+      </div>
+      {{/each}}
+      {{/if}}
+    </div>
+  </div>
+</div>
